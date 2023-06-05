@@ -1,0 +1,13 @@
+package routes
+
+import (
+	"github.com/gofiber/fiber/v2"
+	"vehicular-back-go/pkg/controllers"
+)
+
+func BrandRoutes(router fiber.Router) {
+	router.Get("/{{.RouteName}}s", controllers.{{.ListName }})
+	router.Get("/{{.RouteName}}/:id", controllers.{{.DetailName}})
+	router.Get("/{{.RouteName}}/:id", controllers.{{.UpdateName}})
+	router.Get("/{{.RouteName}}/:id", controllers.{{.DeleteName}})
+}
