@@ -43,7 +43,7 @@ var controllerCmd = &cobra.Command{
 			PathTemplate+TemplateController,
 			PathController+name+".go",
 			data)
-
+		fmt.Printf("Success create controller name %s\n", name)
 	},
 }
 

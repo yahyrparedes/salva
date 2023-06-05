@@ -45,6 +45,7 @@ var routeCmd = &cobra.Command{
 			PathRouter+name+".go",
 			data)
 
+		fmt.Printf("Success create router name %s\n", name)
 	},
 }
 
