@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	PathTemplate   = "./cmd/templates/"
+	PathTemplate   = "/templates/"
 	PathController = "./pkg/controllers/"
 	PathRouter     = "./pkg/routes/"
 )
