@@ -1,11 +1,11 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
-*/
 package main
 
-import "vehicular-command-go/cmd"
+import (
+	"github.com/yahyrparedes/salva/cmd"
+	"log"
+)
 
 func main() {
+	log.Println("IS Command CLI ")
 	cmd.Execute()
 }
