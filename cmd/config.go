@@ -23,6 +23,7 @@ type Data struct {
 	UpdateName string
 	DeleteName string
 	RouteName  string
+	Route      string
 }
 
 func ProcessTemplate(fileName string, outputFile string, data Data) {
@@ -77,7 +78,7 @@ import (
 	"vehicular-back-go/pkg/controllers"
 )
 
-func BrandRoutes(router fiber.Router) {
+func {{.Route}}Routes(router fiber.Router) {
 	router.Get("/{{.RouteName}}s", controllers.{{.ListName }})
 	router.Get("/{{.RouteName}}/:id", controllers.{{.DetailName}})
 	router.Get("/{{.RouteName}}/:id", controllers.{{.UpdateName}})

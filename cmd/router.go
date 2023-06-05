@@ -38,6 +38,7 @@ var routeCmd = &cobra.Command{
 			UpdateName: "Update" + input,
 			DeleteName: "Delete" + input,
 			RouteName:  name,
+			Route:      input,
 		}
 
 		//ProcessTemplate(
