@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	TemplateRoute = "router.tmpl"
+	TemplateRoute = "/router.tmpl"
 )
 
 var routeCmd = &cobra.Command{
@@ -41,7 +41,7 @@ var routeCmd = &cobra.Command{
 		}
 
 		ProcessTemplate(
-			PathTemplate+TemplateRoute,
+			TemplateRoute,
 			PathRouter+name+".go",
 			data)
 

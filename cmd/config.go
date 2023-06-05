@@ -6,10 +6,11 @@ import (
 	"html/template"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 const (
-	PathTemplate   = "/templates/"
+	PathTemplate   = "./cmd/templates/"
 	PathController = "./pkg/controllers/"
 	PathRouter     = "./pkg/routes/"
 )
@@ -23,7 +24,8 @@ type Data struct {
 }
 
 func ProcessTemplate(fileName string, outputFile string, data Data) {
-	tmpl := template.Must(template.ParseFiles(fileName))
+	filePrefix, _ := filepath.Abs(PathTemplate)
+	tmpl := template.Must(template.ParseFiles(filePrefix + fileName))
 	f, _ := os.Create(outputFile)
 	err := tmpl.Execute(f, data)
 	if err != nil {

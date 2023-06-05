@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	TemplateController = "controller.tmpl"
+	TemplateController = "/controller.tmpl"
 )
 
 var controllerCmd = &cobra.Command{
@@ -40,7 +40,7 @@ var controllerCmd = &cobra.Command{
 		}
 
 		ProcessTemplate(
-			PathTemplate+TemplateController,
+			TemplateController,
 			PathController+name+".go",
 			data)
 		fmt.Printf("Success create controller name %s\n", name)
