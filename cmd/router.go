@@ -40,8 +40,12 @@ var routeCmd = &cobra.Command{
 			RouteName:  name,
 		}
 
-		ProcessTemplate(
-			TemplateRoute,
+		//ProcessTemplate(
+		//	TemplateRoute,
+		//	PathRouter+name+".go",
+		//	data)
+		ProcessTemplateString(
+			RouterTemplate,
 			PathRouter+name+".go",
 			data)
 

@@ -39,8 +39,12 @@ var controllerCmd = &cobra.Command{
 			DeleteName: "Delete" + controller,
 		}
 
-		ProcessTemplate(
-			TemplateController,
+		//ProcessTemplate(
+		//	TemplateController,
+		//	PathController+name+".go",
+		//	data)
+		ProcessTemplateString(
+			ControllerTemplate,
 			PathController+name+".go",
 			data)
 		fmt.Printf("Success create controller name %s\n", name)
