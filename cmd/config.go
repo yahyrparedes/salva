@@ -38,7 +38,10 @@ func ProcessTemplate(fileName string, outputFile string, data Data) {
 func ProcessTemplateString(format string, outputFile string, data Data) {
 	var tmpl = ""
 	if format == ControllerTemplate {
-		tmpl = `package controllers
+		tmpl = `/*
+Generate by is_salva @yahyrparedes
+*/
+package controllers
 
 import (
 	"github.com/gofiber/fiber/v2"
@@ -64,7 +67,10 @@ func {{.DeleteName}}(c *fiber.Ctx) error {
 
 	}
 	if format == RouterTemplate {
-		tmpl = `package routes
+		tmpl = `/*
+Generate by is_salva @yahyrparedes
+*/
+package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
