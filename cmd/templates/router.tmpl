@@ -1,3 +1,6 @@
+/*
+Generate by salva 
+*/
 package routes
 
 import (
@@ -5,9 +8,9 @@ import (
 	"vehicular-back-go/pkg/controllers"
 )
 
-func BrandRoutes(router fiber.Router) {
-	router.Get("/{{.RouteName}}s", controllers.{{.ListName }})
-	router.Get("/{{.RouteName}}/:id", controllers.{{.DetailName}})
-	router.Get("/{{.RouteName}}/:id", controllers.{{.UpdateName}})
-	router.Get("/{{.RouteName}}/:id", controllers.{{.DeleteName}})
+func {{.Name}}Route(router fiber.Router) {
+	router.Get("/{{.Path}}s", controllers.{{.ListName }})
+	router.Get("/{{.Path}}/:id", controllers.{{.DetailName}})
+	router.Get("/{{.Path}}/:id", controllers.{{.UpdateName}})
+	router.Get("/{{.Path}}/:id", controllers.{{.DeleteName}})
 }

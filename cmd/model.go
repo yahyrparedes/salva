@@ -8,15 +8,14 @@ import (
 )
 
 const (
-	TemplateRoute = "/router.tmpl"
+	TemplateModel = "/model.tmpl"
 )
 
-var routeCmd = &cobra.Command{
-	Use:   "router",
-	Short: "Create file router",
-	Long:  "Create file router for optimize your development code.",
+var modelCmd = &cobra.Command{
+	Use:   "model",
+	Short: "Create file model",
+	Long:  "Create file model for optimize your development code.",
 	Run: func(cmd *cobra.Command, args []string) {
-		ValidateExistOrCreateDirectory(PathRouter)
 
 		var input = ""
 
@@ -25,7 +24,7 @@ var routeCmd = &cobra.Command{
 		}
 
 		if len(input) == 0 {
-			fmt.Println("Set name controller")
+			fmt.Println("Set name model")
 			return
 		}
 		path := strings.ToLower(input)
@@ -40,20 +39,21 @@ var routeCmd = &cobra.Command{
 			Name:       name,
 			Path:       path,
 		}
-		CreateRouter(name, data)
+
+		CreateModel(name, data)
 
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(routeCmd)
+	rootCmd.AddCommand(modelCmd)
 }
 
-func CreateRouter(name string, data Data) {
+func CreateModel(name string, data Data) {
 	ValidateExistOrCreateDirectory(PathModel)
 	ProcessTemplateString(
-		RouterTemplate,
-		PathRouter+name+".go",
+		ModelTemplate,
+		PathModel+name+".go",
 		data)
-	fmt.Printf("Success create router name %s\n", name)
+	fmt.Printf("Success create model name %s\n", name)
 }

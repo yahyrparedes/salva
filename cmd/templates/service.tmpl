@@ -1,0 +1,16 @@
+/*
+Generate by salva 
+*/
+package services
+
+import (
+	"vehicular-back-go/pkg/mappers"
+	Query{{.Name}} "vehicular-back-go/pkg/repositories"
+)
+
+func Get{{.Name}}s() []mappers.{{.Name}} {
+	{{.Path}}s := Query{{.Name}}.FindAll()
+	m{{.Name}}s := mappers.Request{{.Name}}s({{.Path}}s)
+
+	return m{{.Name}}s
+}
