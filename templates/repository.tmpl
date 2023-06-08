@@ -1,0 +1,19 @@
+{{ template "header" }}
+package repositories
+
+import (
+	"{{.Dir}}/cmd/database"
+	"{{.Dir}}/pkg/models"
+)
+
+func FindAll() []models.{{.Name}} {
+	var {{.Path}}s []models.{{.Name}}
+	database.Connection.Find(&{{.Path}}s)
+	return {{.Path}}s
+}
+
+func FindByID(id int) models.{{.Name}} {
+	var {{.Path}} models.{{.Name}}
+	database.Connection.Find(&{{.Path}}, "id", id)
+	return {{.Path}}
+}

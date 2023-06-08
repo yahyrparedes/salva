@@ -1,11 +1,9 @@
-/*
-Generate by salva 
-*/
+{{ template "header" }}
 package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"vehicular-back-go/pkg/controllers"
+	"{{.Dir}}/pkg/controllers"
 )
 
 func {{.Name}}Route(router fiber.Router) {

@@ -1,11 +1,9 @@
-/*
-Generate by salva 
-*/
+{{ template "header" }}
 package services
 
 import (
-	"vehicular-back-go/pkg/mappers"
-	Query{{.Name}} "vehicular-back-go/pkg/repositories"
+	"{{.Dir}}/pkg/mappers"
+	Query{{.Name}} "{{.Dir}}/pkg/repositories"
 )
 
 func Get{{.Name}}s() []mappers.{{.Name}} {
