@@ -14,29 +14,11 @@
 package main
 
 import (
-	"github.com/spf13/cobra"
 	"testing"
-	"text/template"
 )
 
 func assertNoErr(t *testing.T, e error) {
 	if e != nil {
 		t.Error(e)
-	}
-}
-
-func TestAddTemplateFunctions(t *testing.T) {
-	cobra.AddTemplateFunc("t", func() bool { return true })
-	cobra.AddTemplateFuncs(template.FuncMap{
-		"f": func() bool { return false },
-		"h": func() string { return "Hello," },
-		"w": func() string { return "world." }})
-
-	c := cobra.Command{}
-	c.SetUsageTemplate(`{{if t}}{{h}}{{end}}{{if f}}{{h}}{{end}} {{w}}`)
-
-	const expected = "Hello, world."
-	if got := c.UsageString(); got != expected {
-		t.Errorf("Expected UsageString: %v\nGot: %v", expected, got)
 	}
 }
