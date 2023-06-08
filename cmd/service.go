@@ -7,7 +7,7 @@ import (
 
 const (
 	TemplateServiceFile = "service.tmpl"
-	PathService         = "./pkg/service/"
+	PathService         = "./pkg/services/"
 	Service             = "ServiceTemplate"
 )
 
