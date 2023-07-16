@@ -16,7 +16,7 @@ It is recommended to use this template **[Salva Template](https://github.com/yah
 
 ### Install
 ```bash 
-go get -u github.com/spf13/cobra/cobra
+go get -u github.com/yahyrparedes/salva
 ```
 
 ### How to use

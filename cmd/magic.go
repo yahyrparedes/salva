@@ -10,11 +10,12 @@ var (
 	FlagRouter     bool
 	FlagService    bool
 	FlagRepository bool
+	FlagMapper     bool
 )
 
 var magicCmd = &cobra.Command{
 	Use:   "magic",
-	Short: "Create Controller, Model, Router, Service, Repository",
+	Short: "Create Controller, Model, Mapper, Router, Service, Repository",
 	Long:  "",
 	Run: func(cmd *cobra.Command, args []string) {
 
@@ -27,6 +28,7 @@ var magicCmd = &cobra.Command{
 			CreateController(input, data)
 			CreateService(input, data)
 			CreateRepository(input, data)
+			CreateMapper(input, data)
 		}
 
 		if FlagModel {
@@ -49,12 +51,17 @@ var magicCmd = &cobra.Command{
 			CreateRepository(input, data)
 		}
 
+		if FlagMapper {
+			CreateMapper(input, data)
+		}
+
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(magicCmd)
 	magicCmd.Flags().BoolVarP(&FlagModel, "model", "m", false, "Create model")
+	magicCmd.Flags().BoolVarP(&FlagMapper, "mapper", "a", false, "Create mapper")
 	magicCmd.Flags().BoolVarP(&FlagController, "controller", "c", false, "Create controller")
 	magicCmd.Flags().BoolVarP(&FlagRouter, "router", "r", false, "Create router")
 	magicCmd.Flags().BoolVarP(&FlagService, "service", "s", false, "Create service")

@@ -59,6 +59,10 @@ func getTemplateString(file string) string {
 		tmpl = TemplateRepositoryString
 	}
 
+	if file == Mapper {
+		tmpl = TemplateMapperString
+	}
+
 	return tmpl
 }
 
@@ -171,6 +175,34 @@ func {{.UpdateName}}(c *fiber.Ctx) error {
 
 func {{.DeleteName}}(c *fiber.Ctx) error {
 	return nil
+}
+`
+
+const TemplateMapperString = `// Generate by salva 
+package mappers
+
+import (
+	"fmt"
+	"{{.Dir}}/pkg/models"
+)
+
+type {{.Name}} struct {
+
+}
+
+func Request{{.Name}}s({{.Path}}s []models.{{.Name}}) []{{.Name}} {
+	var {{ slice .Path  0 2}} []{{.Name}}
+	for _, {{ slice .Path  0 1}} := range {{.Path}}s {
+		{{ slice .Path  0 2}} = append({{ slice .Path  0 2}}, Request{{.Name}}({{ slice .Path  0 1}}))
+	}
+
+	return {{ slice .Path  0 2}}
+}
+
+func Request{{.Name}}({{.Path}} models.{{.Name}}) {{.Name}} {
+	var {{ slice .Path  0 1}} {{.Name}}
+
+	return {{ slice .Path  0 1}}
 }
 `
 
