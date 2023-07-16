@@ -96,10 +96,16 @@ import (
 )
 
 func Get{{.Name}}s() []mappers.{{.Name}} {
-	{{.Path}}s := Query{{.Name}}.FindAll()
+	{{.Path}}s := Query{{.Name}}.FindAll{{.Name}}()
 	m{{.Name}}s := mappers.Request{{.Name}}s({{.Path}}s)
 
 	return m{{.Name}}s
+}
+
+func Get{{.Name}}(id int) mappers.{{.Name}} {
+	{{.Path}} := Query{{.Name}}.FindByID{{.Name}}(id)
+	m{{.Name}} := mappers.Request{{.Name}}({{.Path}})
+	return m{{.Name}}
 }
 `
 
