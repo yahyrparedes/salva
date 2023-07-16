@@ -111,18 +111,17 @@ import (
 	"{{.Dir}}/pkg/models"
 )
 
-func FindAll() []models.{{.Name}} {
+func FindAll{{.Name}}() []models.{{.Name}} {
 	var {{.Path}}s []models.{{.Name}}
 	database.Connection.Find(&{{.Path}}s)
 	return {{.Path}}s
 }
 
-func FindByID(id int) models.{{.Name}} {
+func FindByID{{.Name}}(id int) models.{{.Name}} {
 	var {{.Path}} models.{{.Name}}
 	database.Connection.Find(&{{.Path}}, "id", id)
 	return {{.Path}}
 }
-
 `
 
 const TemplateModelString = `// Generate by salva 
@@ -181,8 +180,7 @@ func {{.DeleteName}}(c *fiber.Ctx) error {
 const TemplateMapperString = `// Generate by salva 
 package mappers
 
-import (
-	"fmt"
+import ( 
 	"{{.Dir}}/pkg/models"
 )
 

@@ -47,8 +47,7 @@ func GetArg(args []string) string {
 
 func GenerateData(input string) Data {
 	dir := GetDirExecuteCommand()
-
-	fmt.Printf(dir)
+ 
 	runes := []rune(input)
 	runes[0] = unicode.ToUpper(runes[0])
 	name := string(runes)
